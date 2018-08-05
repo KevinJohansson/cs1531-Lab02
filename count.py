@@ -36,15 +36,33 @@ def count_char_insensitive(text):
 		print(i + " " + str(dictionary[i]))
 
 # bonus task:
-#def count_char_ordered(text):
-    #pass
+def count_char_ordered(text):
+	dictionary = {}
+	for i in range(len(text)):
+		val = text[i]
+		val = val.lower()
+		dictionary[val] = 0
+	for i in range(len(text)):
+		val = text[i]
+		val = val.lower()
+		dictionary[val] += 1
+	highest = 0
+	for i in dictionary:
+		if (dictionary[i] > highest):
+			highest = dictionary[i]
+	for occurances in range(highest + 1, 0, -1):
+		for i in dictionary:
+			if (dictionary[i] == occurances):
+				print(i + " " + str(dictionary[i]))
+
+
     # add your code here 
 
 text1 = "I felt happy because I saw the others were happy and because I knew I should feel happy but I wasn't really happy" # Robert Bolano
 text2 = 'HellO, WorLd!'
 
 # testing exercise 2
-count_char(text2)
-count_char_insensitive(text2)
-#count_char_ordered(text2)
+#count_char(text2)
+#count_char_insensitive(text2)
+count_char_ordered(text2)
 
