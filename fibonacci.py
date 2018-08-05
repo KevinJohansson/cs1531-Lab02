@@ -23,6 +23,11 @@ fib_dict = {
 # Do not print it from this function
 def fib_sequence(num):
 	# to be completed
-	return fib_dict[num]
-
+	if (num <= 2):
+		return fib_dict[num]
+	else:
+		return fib_sequence(num-1) + fib_sequence(num-2)
 #write code to accept user input, call the function and print the result
+
+num = int(input("Input number: "))
+print(fib_sequence(num))
